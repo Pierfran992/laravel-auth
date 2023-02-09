@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Project;
+
 class MainCotroller extends Controller
 {
     public function home() {

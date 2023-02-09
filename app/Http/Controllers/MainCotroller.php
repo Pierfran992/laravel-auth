@@ -33,4 +33,9 @@ class MainCotroller extends Controller
         $project->delete();
         return redirect() -> route('private.home');
     }
+
+    // create
+    public function create(){
+        return view('pages.createProject');
+    }
 }

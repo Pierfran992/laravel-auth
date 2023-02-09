@@ -34,6 +34,10 @@ Route::get('/private/show/project/{project}', [MainCotroller::class, 'privateSho
 Route::get('/project/delete/{project}', [MainCotroller::class, 'delete'])
     ->name('project.delete');
 
+// create
+Route::get('/project/create', [MainCotroller::class, 'create'])
+    ->middleware(['auth', 'verified'])->name('create.project');
+
 // --------------------------------------
 
 // Route::get('/dashboard', function () {

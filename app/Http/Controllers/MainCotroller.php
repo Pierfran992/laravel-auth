@@ -9,7 +9,8 @@ use App\Models\Project;
 class MainCotroller extends Controller
 {
     public function home() {
-        return view('pages.home');
+        $projects = Project::all();
+        return view('pages.home', compact('projects'));
     }
 
     public function privateHome() {

@@ -34,6 +34,8 @@
                         {{ $project -> repo_link}}
                     </a>
                 </p>
+
+                <a href="{{route('project.delete', $project)}}" class="btn btn-danger">Delete Project</a>
             </div>
         </div>
 

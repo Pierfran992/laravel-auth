@@ -30,6 +30,10 @@ Route::get('/show/project/{project}', [MainCotroller::class, 'show'])
 Route::get('/private/show/project/{project}', [MainCotroller::class, 'privateShow'])
     ->middleware(['auth', 'verified'])->name('private.project.show');
 
+// delete
+Route::get('/project/delete/{project}', [MainCotroller::class, 'delete'])
+    ->name('project.delete');
+
 // --------------------------------------
 
 // Route::get('/dashboard', function () {

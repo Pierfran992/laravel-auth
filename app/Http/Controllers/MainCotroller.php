@@ -38,4 +38,15 @@ class MainCotroller extends Controller
     public function create(){
         return view('pages.createProject');
     }
+
+    public function store(Request $request) {
+
+        $data = $request -> validate([
+            'name' => 'required|string|max:64',
+            'description' => 'nullable|string',
+            'main_image' => 'required|unique',
+            'release_date' => 'required|date|before:today',
+            'repo_link' => 'required|unique',
+        ]);
+    }
 }

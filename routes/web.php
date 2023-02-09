@@ -36,7 +36,9 @@ Route::get('/project/delete/{project}', [MainCotroller::class, 'delete'])
 
 // create
 Route::get('/project/create', [MainCotroller::class, 'create'])
-    ->middleware(['auth', 'verified'])->name('create.project');
+    ->middleware(['auth', 'verified'])->name('project.create');
+Route::post('/project/store', [MainCotroller::class, 'store'])
+    ->middleware(['auth', 'verified'])->name('project.store');
 
 // --------------------------------------
 

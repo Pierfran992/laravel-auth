@@ -48,5 +48,18 @@ class MainCotroller extends Controller
             'release_date' => 'required|date|before:today',
             'repo_link' => 'required|unique',
         ]);
+
+        $project = new project();
+
+        $project -> name = $data['name'];
+        $project -> description = $data['description'];
+        $project -> main_image = $data['main_image'];
+        $project -> release_date = $data['release_date'];
+        $project -> repo_link = $data['repo_link'];
+
+
+        $project->save();
+
+        return redirect()->route('private.home');
     }
 }

@@ -40,6 +40,12 @@ Route::get('/project/create', [MainCotroller::class, 'create'])
 Route::post('/project/store', [MainCotroller::class, 'store'])
     ->middleware(['auth', 'verified'])->name('project.store');
 
+// edit
+Route::get('/project/edit/{project}', [MainCotroller::class, 'edit'])
+    ->middleware(['auth', 'verified'])->name('project.edit');
+Route::post('/project/update/{project}', [MainCotroller::class, 'update'])
+    ->middleware(['auth', 'verified'])->name('project.update');
+
 // --------------------------------------
 
 // Route::get('/dashboard', function () {

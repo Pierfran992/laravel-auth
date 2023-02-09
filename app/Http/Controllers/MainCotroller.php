@@ -62,4 +62,31 @@ class MainCotroller extends Controller
 
         return redirect()->route('private.home');
     }
+
+    // edit
+    public function edit(Project $project){
+        return view('pages.editProject', compact('project'));
+    }
+
+    public function update(Request $request, Project $project) {
+
+        $data = $request -> validate([
+            'name' => 'required|string|max:64',
+            'description' => 'nullable|string',
+            'main_image' => 'required|unique:projects',
+            'release_date' => 'required|date|before:today',
+            'repo_link' => 'required|unique:projects',
+        ]);
+
+        $project -> name = $data['name'];
+        $project -> description = $data['description'];
+        $project -> main_image = $data['main_image'];
+        $project -> release_date = $data['release_date'];
+        $project -> repo_link = $data['repo_link'];
+
+
+        $project->save();
+
+        return redirect()->route('private.project.show' , $project);
+    }
 }

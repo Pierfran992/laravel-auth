@@ -36,7 +36,7 @@
                         </a>
                     </p>
 
-                    <a href="{{route('project.show', $project)}}" class="btn btn-danger">Go somewhere</a>
+                    <a href="{{route('private.project.show', $project)}}" class="btn btn-danger">Go somewhere</a>
                 </div>
             </div>
         @endforeach

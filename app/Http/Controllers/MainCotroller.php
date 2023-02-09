@@ -24,6 +24,10 @@ class MainCotroller extends Controller
         return view('pages.showProject', compact('project'));
     }
 
+    public function privateShow(Project $project) {
+        return view('pages.privateShowProject', compact('project'));
+    }
+
     // delete
     public function delete(Project $project) {
         $project->delete();

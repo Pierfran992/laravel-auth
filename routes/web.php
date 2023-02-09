@@ -26,6 +26,9 @@ Route::get('/private/home', [MainCotroller::class, 'privateHome'])
 // show
 Route::get('/show/project/{project}', [MainCotroller::class, 'show'])
     ->name('project.show');
+// private show
+Route::get('/private/show/project/{project}', [MainCotroller::class, 'privateShow'])
+    ->middleware(['auth', 'verified'])->name('private.project.show');
 
 // --------------------------------------
 

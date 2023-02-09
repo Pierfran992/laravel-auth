@@ -14,10 +14,15 @@
 </head>
 <body>
     
+    {{-- header --}}
     @include('components.header')
 
-    @yield('content')
+    {{-- main --}}
+    <div class="ms_container">
+        @yield('content')    
+    </div>
 
+    {{-- footer --}}
     @include('components.footer')
 
 </body>

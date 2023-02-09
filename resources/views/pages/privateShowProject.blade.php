@@ -36,6 +36,8 @@
                 </p>
 
                 <a href="{{route('project.delete', $project)}}" class="btn btn-danger">Delete Project</a>
+                <a href="{{route('project.edit', $project)}}" class="btn btn-danger">Edit Project</a>
+
             </div>
         </div>
 

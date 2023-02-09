@@ -44,9 +44,9 @@ class MainCotroller extends Controller
         $data = $request -> validate([
             'name' => 'required|string|max:64',
             'description' => 'nullable|string',
-            'main_image' => 'required|unique',
+            'main_image' => 'required|unique:projects',
             'release_date' => 'required|date|before:today',
-            'repo_link' => 'required|unique',
+            'repo_link' => 'required|unique:projects',
         ]);
 
         $project = new project();

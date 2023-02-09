@@ -3,6 +3,17 @@
 @section('content')
     <h1 class="mb-5 text-danger">Create New Project</h1>
 
+    {{-- messaggi di errore --}}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     {{-- creo il form con cui andar a creare il nuovo elemento da inviare al database --}}
     <form method="POST" action="{{route('project.store')}}">
         

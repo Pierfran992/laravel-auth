@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
 class ProjectFactory extends Factory
 {
@@ -17,7 +17,13 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
+            'name' => fake() -> unique() -> sentence(2),
+            'description' => fake() -> boolean() ? fake() -> text(100) : '',
+            'main_image' => fake() -> unique() -> imageUrl(360, 360, 'animals', true),
+            'release_date' => fake() -> date(),
+            'repo_link' => fake() -> unique() -> url() ,
+
         ];
     }
 }

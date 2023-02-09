@@ -15,11 +15,19 @@ use App\Http\Controllers\MainCotroller;
 |
 */
 
+// ROUTE DEL MAINCONTOLLER
+// index
 Route::get('/', [MainCotroller::class , 'home'])
     ->name('home');
-
+// private index
 Route::get('/private/home', [MainCotroller::class, 'privateHome'])
     ->middleware(['auth', 'verified']) ->name('private.home');
+
+// show
+Route::get('/show/project/{project}', [MainCotroller::class, 'show'])
+    ->name('project.show');
+
+// --------------------------------------
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

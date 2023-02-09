@@ -16,4 +16,8 @@ class MainCotroller extends Controller
     public function privateHome() {
         return view('pages.privateHome');
     }
+
+    public function show(Project $project) {
+        return view('pages.showProject', compact('project'));
+    }
 }

@@ -15,7 +15,7 @@
     @endif
 
     {{-- creo il form con cui andar a creare il nuovo elemento da inviare al database --}}
-    <form method="POST" action="{{route('project.store')}}">
+    <form method="POST" action="{{route('project.store')}}" enctype="multipart/form-data">
         
         @csrf
 
@@ -35,8 +35,8 @@
         </div>
 
         <div class="input-group my-2">
-            <label for="main_image" class="input-group-text" id="basic-addon1">Main Image URL</label>
-            <input type="text" class="form-control" name="main_image">
+            <label for="main_image" class="input-group-text" id="basic-addon1">Main Image</label>
+            <input type="file" class="form-control" name="main_image">
         </div>
 
         <div class="input-group my-2">

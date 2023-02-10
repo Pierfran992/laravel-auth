@@ -6,7 +6,7 @@
     <div class="container d-flex flex-wrap align-items-stretch gap-3">
         {{-- CARD CONTENENTE LE INFO DEL PROGETTO --}}
         <div class="card text-start" style="width: 18rem;">
-            <img src="{{ $project -> main_image}}" class="card-img-top" alt="{{ $project -> name}}">
+            <img src="{{ asset('storage/' . $project -> main_image) }}" class="card-img-top" alt="{{ $project -> name}}">
             <div class="card-body">
 
                 <h5 class="card-title">

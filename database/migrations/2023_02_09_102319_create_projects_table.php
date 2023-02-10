@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 64) -> unique();
             $table->string('description') -> nullable();
-            $table->string('main_image') -> unique();
+            $table->string('main_image') -> default('image-not-found.jpg');
             $table->date('release_date');
             $table->string('repo_link') -> unique();
             $table->timestamps();

@@ -19,8 +19,7 @@ class ProjectFactory extends Factory
         return [
             
             'name' => fake() -> unique() -> sentence(2),
-            'description' => fake() -> boolean() ? fake() -> text(100) : '',
-            'main_image' => fake() -> unique() -> imageUrl(360, 360, 'animals', true),
+            'description' => fake() -> boolean() ? fake() -> text(100) : null,
             'release_date' => fake() -> date(),
             'repo_link' => fake() -> unique() -> url() ,
 
